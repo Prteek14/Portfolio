@@ -1,0 +1,450 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: 'Sora', sans-serif;
+  overflow-x: hidden;
+}
+
+/* -------- Header Section -------- */
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: relative;
+  background: linear-gradient(
+  90deg,
+  #05050a 0%,    #05050a 12.5%,
+  #0c0d11 12.5%, #0c0d11 25%,
+  #141518 25%,   #141518 37.5%,
+  #1b1c1f 37.5%, #1b1c1f 50%,
+  #222326 50%,   #222326 62.5%,
+  #28282c 62.5%, #28282c 75%,
+  #2c2d31 75%,   #2c2d31 87.5%,
+  #303135 87.5%, #303135 100%
+);
+
+}
+
+/* Logo */
+#logo img {
+  width: clamp(4rem, 5vw, 6rem);
+  height: clamp(4rem, 5vw, 6rem);
+}
+
+/* Toggle Button for Mobile */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 35rem;
+  background: transparent;
+  position: static;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  transition: 0.2s ease-in-out;
+}
+
+nav a:hover {
+  transform: scale(1.2);
+}
+
+/* -------- Mobile Nav -------- */
+@media (max-width: 750px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none !important;
+    flex-direction: column;
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    width: max-content;
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    z-index: 1000;
+    gap: 1rem;
+  }
+
+  nav.show {
+    display: flex !important;
+  }
+}
+
+/* -------- About Section -------- */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: #0d0699;
+  background: linear-gradient(90deg, rgba(13, 6, 153, 1) 0%, rgba(16, 16, 181, 1) 40%, rgba(0, 200, 255, 1) 95%);
+  margin: 2.5rem;
+  text-align: center;
+  border-radius: 50px;
+}
+
+#my_img img {
+  border: 4px solid rgb(1, 10, 14);
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#intro p {
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  max-width: 100%;
+}
+
+#intro a {
+  display: inline-block;
+  text-decoration: none;
+  color:  beige;
+  font-weight: 600;
+  background-color:black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  margin: 0.4rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#intro a:hover {
+  background-color: rgb(54, 54, 54);
+  transform: scale(1.05);
+}
+
+#my_img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgb(0, 0, 0);
+}
+
+/* Tablet */
+@media (min-width: 750px) {
+  .about {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+  }
+
+  #intro {
+    align-items: flex-start;
+  }
+
+  #intro p {
+    text-align: left;
+  }
+
+  #intro-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+}
+
+/* Larger screens */
+@media (min-width: 890px) {
+  .about {
+    padding: 3rem 6rem;
+    gap: 3rem;
+  }
+
+  #intro {
+    max-width: 60%;
+  }
+
+  #my_img img {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+/* moving section */
+
+.scroll-text {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 2rem auto;
+  z-index: 1;
+}
+
+.scroll-text .text {
+  display: inline-block;
+  font-size: 3rem;
+  color: #11feab;
+  animation: scrollText 40s linear infinite;
+  z-index: 0;
+  font-weight: bold;
+  font-family: 'Huninn', sans-serif;
+}
+
+.scroll-text .text span {
+  padding-right: 4rem;
+}
+
+/* Enhanced shadows with perfect fade */
+.scroll-text::before,
+.scroll-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scroll-text::before {
+  left: 0;
+  background: linear-gradient(to right,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.8) 50%,
+    rgba(0,0,0,0) 100%);
+}
+
+.scroll-text::after {
+  right: 0;
+  background: linear-gradient(to left,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.8) 50%,
+    rgba(0,0,0,0) 100%);
+}
+
+/* Smooth scrolling animation */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-text .text {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+/* -------- Skills Section -------- */
+
+#skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(90deg,
+  #996b65 0%,
+  #574444 30%,
+  rgb(110,43,98) 100%);
+}
+
+#skills div {
+  width: clamp(10rem, 5vw + 1rem, 14rem);
+  height: clamp(10rem, 5vw + 1rem, 14rem);
+  background: linear-gradient(to bottom right, #222, #2c2c2c);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+#skills div:hover {
+  transform: scale(1.10) ;
+  box-shadow: 0 0 20px rgb(255, 178, 232);
+}
+
+#skills div img {
+  width: clamp(6rem, 4vw, 8rem);
+  height: clamp(6rem, 4vw, 8rem);
+  object-fit: contain;
+}
+
+#skills div p {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+@media (min-width: 750px) {
+   #skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  #skills div {
+  width: 12rem;
+  height: 12rem;
+}
+  #skills div img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+  }
+  #skills div p{
+    font-size: 1rem;
+  }
+}
+
+
+/* -----------projects------ */
+#pro_header{
+  text-align: center;
+  margin: 2rem;
+  color: #4FFFB0;
+  font-size: clamp(1.5rem,5vw,2.5rem);
+  font-weight: bold;
+  font-family: 'Huninn', sans-serif
+}
+
+#projects{
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(90deg,
+  #918c7f 0%,
+  #676d92 30%,
+  #063e80 100%);
+  margin: 1rem 2rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 100px 0 100px 0;
+}
+
+#projects div{
+  width: clamp(12rem, 2vw,20rem);
+  height: clamp(12rem, 2vw,20rem);
+  text-align: center;
+  font-size: 1rem;
+}
+
+#projects div img{
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border: 2px solid #000000;
+  border-radius: 100px;
+}
+
+#pro_3 img{
+  background-color: rgb(217, 223, 223);
+}
+#projects > div>img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#projects > div >img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgb(219, 227, 222);
+}
+
+
+@media (min-width:650px){
+  #projects{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+}
+
+
+
+/* -------- Footer -------- */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient( 290deg,  rgb(33, 2, 26) 2.6%, rgba(110,43,98,1) 103.4% );  padding: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  gap: 2rem;
+  color: #fedede;
+}
+
+footer div img {
+  width: 2rem;
+  height: 2rem;
+}
+
+#my_mail,#my_num{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+/* Container */
+#contact {
+  display: flex;               /* center horizontally & vertically */
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;             /* vertical breathing room */
+}
+
+/* Actual text */
+#contact p {
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* responsive size */
+  font-weight: 600;
+  color: #ae0586;              /* accent colour; change as you like */
+  letter-spacing: 0.05rem;
+}
+
+@media (min-width:500px){
+  footer{
+  height: 15rem;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: clamp(0.7rem,3vw,1rem)
+}
+}
