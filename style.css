@@ -19,8 +19,13 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  position: relative;
+  padding: 0.3rem 2rem;
+  position: fixed;
+  /* width: 100%; */
+  z-index: 4;
+  padding-right: 10px;
+  width: calc(100% - 5px);
+
   background: linear-gradient(
   90deg,
   #05050a 0%,    #05050a 12.5%,
@@ -106,6 +111,7 @@ nav a:hover {
   background: #0d0699;
   background: linear-gradient(90deg, rgba(13, 6, 153, 1) 0%, rgba(16, 16, 181, 1) 40%, rgba(0, 200, 255, 1) 95%);
   margin: 2.5rem;
+  margin-top: 10rem;
   text-align: center;
   border-radius: 50px;
 }
@@ -447,4 +453,28 @@ footer div img {
   justify-content: space-between;
   font-size: clamp(0.7rem,3vw,1rem)
 }
+}
+
+/* Target the entire scrollbar */
+body::-webkit-scrollbar {
+  width: 5px;             /* vertical scrollbar width */
+  height: 12px;            /* horizontal scrollbar height */
+}
+
+/* Track (background of scrollbar) */
+body::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 6px;
+  z-index: 5;
+}
+
+/* Thumb (the draggable handle) */
+body::-webkit-scrollbar-thumb {
+  background: #013994;
+  border-radius: 6px;
+}
+
+/* Hover effect on thumb */
+body::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
