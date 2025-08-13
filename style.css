@@ -11,6 +11,7 @@ html, body {
   color: white;
   font-family: 'Sora', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* -------- Header Section -------- */
@@ -21,22 +22,10 @@ html, body {
   justify-content: space-between;
   padding: 0.3rem 2rem;
   position: fixed;
-  /* width: 100%; */
   z-index: 4;
   padding-right: 10px;
   width: calc(100% - 5px);
-
-  background: linear-gradient(
-  90deg,
-  #05050a 0%,    #05050a 12.5%,
-  #0c0d11 12.5%, #0c0d11 25%,
-  #141518 25%,   #141518 37.5%,
-  #1b1c1f 37.5%, #1b1c1f 50%,
-  #222326 50%,   #222326 62.5%,
-  #28282c 62.5%, #28282c 75%,
-  #2c2d31 75%,   #2c2d31 87.5%,
-  #303135 87.5%, #303135 100%
-);
+  background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
 
 }
 
@@ -44,6 +33,7 @@ html, body {
 #logo img {
   width: clamp(4rem, 5vw, 6rem);
   height: clamp(4rem, 5vw, 6rem);
+  border-radius: 50%;
 }
 
 /* Toggle Button for Mobile */
@@ -382,7 +372,7 @@ nav a:hover {
   border-radius: 100px;
 }
 
-#pro_3 img{
+#calc_site img{
   background-color: rgb(217, 223, 223);
 }
 #projects > div>img {

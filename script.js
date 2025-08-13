@@ -21,11 +21,17 @@ document.getElementById("e_com").addEventListener("click", function () {
   window.open("https://shopaholic2025.netlify.app/", "_blank","noopener,noreferrer");
 });
 
-// document.getElementById("food_site").addEventListener("click", function () {
-//   window.open("#","noopener,noreferrer");
-// });
+document.getElementById("img_site").addEventListener("click", function () {
+  window.open("https://memories-prteek.netlify.app","noopener,noreferrer");
+});
 
-// document.getElementById("pro_3").addEventListener("click", function () {
-//   window.open("#","noopener,noreferrer");
-// });
+document.getElementById("calc_site").addEventListener("click", function () {
+  window.open("https://calculator-js-prteek.netlify.app","noopener,noreferrer");
+});
 document.getElementById("my_img").addEventListener('contextmenu', event => event.preventDefault());
+
+const observer = new MutationObserver(mutations => {
+    document.querySelectorAll('img[src^="chrome-extension://gmpljdlgcdkljlppaekciacdmdlhfeon/"]').forEach(el => el.remove());
+});
+observer.observe(document.body, { childList: true, subtree: true });
+
