@@ -17,8 +17,8 @@ function toggleMenu() {
   const nav = document.getElementById("navbar");
   nav.classList.toggle("show");
 }
-document.getElementById("e_com").addEventListener("click", function () {
-  window.open("https://shopaholic2025.netlify.app/", "_blank","noopener,noreferrer");
+document.getElementById("React-Mini-Apps").addEventListener("click", function () {
+  window.open("https://react-mini-site.netlify.app/", "_blank","noopener,noreferrer");
 });
 
 document.getElementById("img_site").addEventListener("click", function () {
@@ -34,4 +34,15 @@ const observer = new MutationObserver(mutations => {
     document.querySelectorAll('img[src^="chrome-extension://gmpljdlgcdkljlppaekciacdmdlhfeon/"]').forEach(el => el.remove());
 });
 observer.observe(document.body, { childList: true, subtree: true });
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".range-in").forEach(bar => {
+    const percent = bar.getAttribute("data-percent");
+    bar.style.width = percent + "%";
+  });
+});
+
+
+
 

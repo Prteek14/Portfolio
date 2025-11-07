@@ -4,12 +4,13 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   background-color: black;
   color: white;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -26,7 +27,6 @@ html, body {
   padding-right: 10px;
   width: calc(100% - 5px);
   background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
-
 }
 
 /* Logo */
@@ -99,7 +99,12 @@ nav a:hover {
   align-items: center;
   padding: 1rem;
   background: #0d0699;
-  background: linear-gradient(90deg, rgba(13, 6, 153, 1) 0%, rgba(16, 16, 181, 1) 40%, rgba(0, 200, 255, 1) 95%);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 6, 153, 1) 0%,
+    rgba(16, 16, 181, 1) 40%,
+    rgba(0, 200, 255, 1) 95%
+  );
   margin: 2.5rem;
   margin-top: 10rem;
   text-align: center;
@@ -131,9 +136,9 @@ nav a:hover {
 #intro a {
   display: inline-block;
   text-decoration: none;
-  color:  beige;
+  color: beige;
   font-weight: 600;
-  background-color:black;
+  background-color: black;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   margin: 0.4rem;
@@ -172,7 +177,6 @@ nav a:hover {
     gap: 1rem;
     flex-wrap: wrap;
   }
-
 }
 
 /* Larger screens */
@@ -211,7 +215,7 @@ nav a:hover {
   animation: scrollText 40s linear infinite;
   z-index: 0;
   font-weight: bold;
-  font-family: 'Huninn', sans-serif;
+  font-family: "Huninn", sans-serif;
 }
 
 .scroll-text .text span {
@@ -221,7 +225,7 @@ nav a:hover {
 /* Enhanced shadows with perfect fade */
 .scroll-text::before,
 .scroll-text::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   width: 10%;
@@ -232,18 +236,22 @@ nav a:hover {
 
 .scroll-text::before {
   left: 0;
-  background: linear-gradient(to right,
-    rgba(0,0,0,1) 0%,
-    rgba(0,0,0,0.8) 50%,
-    rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .scroll-text::after {
   right: 0;
-  background: linear-gradient(to left,
-    rgba(0,0,0,1) 0%,
-    rgba(0,0,0,0.8) 50%,
-    rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 /* Smooth scrolling animation */
@@ -263,92 +271,161 @@ nav a:hover {
   }
 }
 
-
-
-
 /* -------- Skills Section -------- */
 
-#skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-  align-items: center;
-  padding: 2rem;
-  background: linear-gradient(90deg,
-  #996b65 0%,
-  #574444 30%,
-  rgb(110,43,98) 100%);
-}
-
-#skills div {
-  width: clamp(10rem, 5vw + 1rem, 14rem);
-  height: clamp(10rem, 5vw + 1rem, 14rem);
-  background: linear-gradient(to bottom right, #222, #2c2c2c);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
-    inset 0 0 10px rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.5s ease;
-}
-
-#skills div:hover {
-  transform: scale(1.10) ;
-  box-shadow: 0 0 20px rgb(255, 178, 232);
-}
-
-#skills div img {
-  width: clamp(6rem, 4vw, 8rem);
-  height: clamp(6rem, 4vw, 8rem);
-  object-fit: contain;
-}
-
-#skills div p {
-  margin-top: 0.5rem;
+h3 {
+  font-size: 1.5rem;
+  color: #f0d9ff;
+  z-index: 0;
+  font-weight: bold;
+  font-family: "Huninn", sans-serif;
+  padding-bottom: 1rem;
   text-align: center;
 }
-@media (min-width: 750px) {
-   #skills {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-
-  #skills div {
-  width: 12rem;
-  height: 12rem;
+#skills {
+  background: linear-gradient(
+    90deg,
+    #996b65 0%,
+    #574444 30%,
+    rgb(110, 43, 98) 100%
+  );
+  padding: 2rem;
 }
-  #skills div img {
-    width: 8rem;
-    height: 8rem;
-    object-fit: contain;
-  }
-  #skills div p{
-    font-size: 1rem;
+#scroll-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  padding: 1rem;
+  overflow-x: hidden;
+  background: #9796f0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fbc7d4,
+    #9796f0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fbc7d4, #9796f0);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+.main-skl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-skl:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgb(99, 90, 90);
+}
+
+#scroll-div div img {
+  object-fit: cover;
+  width: 3rem;
+}
+#scroll-div div p {
+  display: inline;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+.range-out {
+  width: 100%;
+  border-radius: 15px;
+  background-color: rgb(1, 45, 1);
+  flex: 0 0 60px;
+}
+.range-in {
+  border-radius: 15px;
+  background-color: rgb(0, 158, 0);
+  text-align: right;
+  padding: 1px 3px;
+  color: #fff;
+  font-size: 10px;
+}
+
+@media (min-width: 420px) and (max-width: 728px) {
+  .range-out {
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgb(1, 45, 1);
+    flex: 0 0 180px;
   }
 }
 
+@media (min-width: 528px) and (max-width: 728px) {
+  #scroll-div div img {
+    object-fit: cover;
+    width: 5rem;
+    margin-left: 1rem;
+  }
+  #scroll-div div p {
+    font-size: larger;
+    margin-right: 3rem;
+    margin-left: 1rem;
+  }
+
+  .range-out {
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 732px) {
+  h3 {
+    font-size: xx-large;
+  }
+
+  #scroll-div {
+    padding: 4rem;
+  }
+  #scroll-div div img {
+    object-fit: cover;
+    width: 9rem;
+    margin-left: 2rem;
+  }
+  #scroll-div div p {
+    font-size: xx-large;
+    font-weight: 700;
+    margin-right: 3rem;
+    margin-left: 1rem;
+  }
+  .range-out {
+    margin-right: 2rem;
+    flex: 0 0 300px;
+  }
+  .range-in {
+    font-size: x-small;
+  }
+}
+
+@media (min-width: 1024px) {
+  .range-out {
+    margin-right: 3rem;
+    flex: 0 0 500px;
+  }
+}
 
 /* -----------projects------ */
-#pro_header{
+#pro_header {
   text-align: center;
   margin: 2rem;
-  color: #4FFFB0;
-  font-size: clamp(1.5rem,5vw,2.5rem);
+  color: #4fffb0;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: bold;
-  font-family: 'Huninn', sans-serif
+  font-family: "Huninn", sans-serif;
 }
 
-#projects{
+#projects {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(90deg,
-  #918c7f 0%,
-  #676d92 30%,
-  #063e80 100%);
+  background: linear-gradient(90deg, #918c7f 0%, #676d92 30%, #063e80 100%);
   margin: 1rem 2rem;
   padding: 1rem;
   align-items: center;
@@ -357,14 +434,14 @@ nav a:hover {
   border-radius: 100px 0 100px 0;
 }
 
-#projects div{
-  width: clamp(12rem, 2vw,20rem);
-  height: clamp(12rem, 2vw,20rem);
+#projects div {
+  width: clamp(12rem, 2vw, 20rem);
+  height: clamp(12rem, 2vw, 20rem);
   text-align: center;
   font-size: 1rem;
 }
 
-#projects div img{
+#projects div img {
   width: 10rem;
   height: 10rem;
   object-fit: cover;
@@ -372,37 +449,38 @@ nav a:hover {
   border-radius: 100px;
 }
 
-#calc_site img{
+#calc_site img {
   background-color: rgb(217, 223, 223);
 }
-#projects > div>img {
+#projects > div > img {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-#projects > div >img:hover {
+#projects > div > img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 15px rgb(219, 227, 222);
 }
 
-
-@media (min-width:650px){
-  #projects{
+@media (min-width: 650px) {
+  #projects {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-
 }
-
-
 
 /* -------- Footer -------- */
 
 footer {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient( 290deg,  rgb(33, 2, 26) 2.6%, rgba(110,43,98,1) 103.4% );  padding: 1rem;
+  background-image: linear-gradient(
+    290deg,
+    rgb(33, 2, 26) 2.6%,
+    rgba(110, 43, 98, 1) 103.4%
+  );
+  padding: 1rem;
   margin-top: 1rem;
   align-items: center;
   gap: 2rem;
@@ -414,7 +492,8 @@ footer div img {
   height: 2rem;
 }
 
-#my_mail,#my_num{
+#my_mail,
+#my_num {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -422,33 +501,33 @@ footer div img {
 }
 /* Container */
 #contact {
-  display: flex;               /* center horizontally & vertically */
+  display: flex; /* center horizontally & vertically */
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;             /* vertical breathing room */
+  padding: 1rem 0; /* vertical breathing room */
 }
 
 /* Actual text */
 #contact p {
   font-size: clamp(1.5rem, 5vw, 2.5rem); /* responsive size */
   font-weight: 600;
-  color: #ae0586;              /* accent colour; change as you like */
+  color: #ae0586; /* accent colour; change as you like */
   letter-spacing: 0.05rem;
 }
 
-@media (min-width:500px){
-  footer{
-  height: 15rem;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: clamp(0.7rem,3vw,1rem)
-}
+@media (min-width: 500px) {
+  footer {
+    height: 15rem;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: clamp(0.7rem, 3vw, 1rem);
+  }
 }
 
 /* Target the entire scrollbar */
 body::-webkit-scrollbar {
-  width: 5px;             /* vertical scrollbar width */
-  height: 12px;            /* horizontal scrollbar height */
+  width: 5px; /* vertical scrollbar width */
+  height: 12px; /* horizontal scrollbar height */
 }
 
 /* Track (background of scrollbar) */
