@@ -28,6 +28,9 @@ document.getElementById("img_site").addEventListener("click", function () {
 document.getElementById("calc_site").addEventListener("click", function () {
   window.open("https://calculator-js-prteek.netlify.app","noopener,noreferrer");
 });
+document.getElementById("Metal_Rate_Calc").addEventListener("click", function () {
+  window.open("https://gspratecalc.netlify.app","noopener,noreferrer");
+});
 document.getElementById("my_img").addEventListener('contextmenu', event => event.preventDefault());
 
 const observer = new MutationObserver(mutations => {
