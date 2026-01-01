@@ -126,7 +126,7 @@ nav a:hover {
   align-items: center;
 }
 
-#intro p {
+#intro h1 {
   font-size: clamp(1.2rem, 2.5vw, 2.2rem);
   margin-bottom: 1rem;
   line-height: 1.4;
